@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "url": "/models/tiger-music.onnx",
   "sampleRate": 44100,
-  "chunkSamples": 176400,
+  "chunkSamples": 529200,
   "nFft": 2048,
   "hopLength": 512,
   "inputNames": [
@@ -17,18 +17,18 @@
   "inputShape": [
     1,
     1025,
-    345
+    1034
   ],
   "outputShape": [
     1,
     1025,
-    345
+    1034
   ],
   "center": true,
   "padMode": "reflect",
   "window": "periodic-hann",
-  "sha256": "c90be124e0fee42380f3b3f184d3fdbf248509dd8ca411229d5c1f2a20c3fae4",
-  "sizeBytes": 10942539,
+  "sha256": "5ab2e4c09a4ee6c678b3a540ccd64dedaf53f373e5c12823f3db58334e044dba",
+  "sizeBytes": 16737495,
   "license": "Apache-2.0 weights; MIT architecture",
   "sourceIndex": 0
 }

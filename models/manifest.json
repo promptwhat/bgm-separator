@@ -6,8 +6,8 @@
   "code_license": "MIT",
   "weights_license": "Apache-2.0",
   "sample_rate": 44100,
-  "chunk_samples": 176400,
-  "chunk_seconds": 4,
+  "chunk_samples": 529200,
+  "chunk_seconds": 12,
   "fft_size": 2048,
   "hop_length": 512,
   "center": true,
@@ -25,52 +25,50 @@
   "input_shape": [
     1,
     1025,
-    345
+    1034
   ],
   "output_shape": [
     1,
     1025,
-    345
+    1034
   ],
   "dtype": "float32",
   "opset": 17,
   "source_index": 0,
-  "size_bytes": 10942539,
-  "sha256": "c90be124e0fee42380f3b3f184d3fdbf248509dd8ca411229d5c1f2a20c3fae4",
+  "size_bytes": 16737495,
+  "sha256": "5ab2e4c09a4ee6c678b3a540ccd64dedaf53f373e5c12823f3db58334e044dba",
   "parameter_count": 1407282,
-  "original_adapter_max_waveform_error": 4.280991561245173e-09,
-  "export_seconds": 20.234327374957502,
+  "graph_optimization": "Byte-identical Constant tensors shared; no arithmetic or weight changes.",
+  "original_adapter_max_waveform_error": 0.0,
+  "export_seconds": 328.19226370821707,
   "parity_checks": [
     {
       "fixture": "broadband",
-      "max_spectral_absolute_error": 2.1532177925109863e-06,
-      "max_waveform_absolute_error": 1.0481016943231225e-08,
-      "cpu_seconds": 5.163788917008787
+      "max_spectral_absolute_error": 0.00013914704322814941,
+      "max_waveform_absolute_error": 1.7798447515815496e-07,
+      "cpu_seconds": 11.126982166897506
     },
     {
       "fixture": "quiet",
-      "max_spectral_absolute_error": 2.470187610015273e-09,
-      "max_waveform_absolute_error": 1.2235545909788925e-11,
-      "cpu_seconds": 6.815876874839887
+      "max_spectral_absolute_error": 1.6004196368157864e-07,
+      "max_waveform_absolute_error": 1.992930265259929e-10,
+      "cpu_seconds": 8.891220499994233
     },
     {
       "fixture": "silence",
       "max_spectral_absolute_error": 0.0,
       "max_waveform_absolute_error": 0.0,
-      "cpu_seconds": 5.42040495807305
+      "cpu_seconds": 8.506082665873691
     }
   ],
   "tested_runtime": {
     "torch": "2.14.0",
-    "torch_device": "mps",
+    "torch_device": "cpu",
     "onnxruntime": "1.30.0"
   },
   "limitations": [
     "AI estimates can contain leakage or remove parts of dialogue/effects.",
     "Four-second browser chunks use shorter context than upstream twelve-second inference.",
     "CPU parity verified; browser WebGPU must be checked independently."
-  ],
-  "graph_optimization": "Byte-identical Constant tensors shared; no arithmetic or weight changes.",
-  "constant_deduplication_max_abs_error": 0.0,
-  "node_count": 12612
+  ]
 }

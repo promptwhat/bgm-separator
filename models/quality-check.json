@@ -1,16 +1,14 @@
 {
-  "fixture": "DnR test ground truth 10086, seconds 8–12, mono, 44100 Hz",
+  "fixture": "DnR test ground truth 10086, seconds 8-12, mono, 44100 Hz",
   "source": "https://github.com/kwatcharasupat/bandit-demo/tree/main/gt/10086",
   "scope": "One real mixture with separate music, speech and effects references; not a general benchmark or a Seedance-specific guarantee.",
-  "method": "Subtract model-estimated music from original mixture. SDR = 10 log10(reference energy / error energy), without scale alignment.",
-  "model_sha256": "c90be124e0fee42380f3b3f184d3fdbf248509dd8ca411229d5c1f2a20c3fae4",
+  "method": "Official TIGER-DnR chunk grid (12 s window, 4 s hop, mean of 3 estimates per sample) with reflected-audio padding of 8 s on both ends instead of the official zero padding. Subtract estimated music from the mixture. SDR = 10 log10(reference energy / error energy), without scale alignment.",
+  "model_sha256": "5ab2e4c09a4ee6c678b3a540ccd64dedaf53f373e5c12823f3db58334e044dba",
   "mixture_additivity_max_abs_error": 2.9802322387695312e-08,
-  "original_vs_dialogue_plus_effects_sdr_db": 2.700331687927246,
-  "processed_vs_dialogue_plus_effects_sdr_db": 11.707921028137207,
-  "estimated_music_sdr_db": 9.007589340209961,
-  "native_cpu_inference_seconds": 7.700145999900997,
-  "concurrent_browser_validation_was_running": true,
-  "limitations": "Residual music and some dialogue/effect loss remain. These values do not imply perfect separation. The interpreter reported a native-library shutdown error after writing outputs; inference and metrics completed.",
-  "original_pre_optimization_model_sha256": "74cea1569222c7fc4727ba76a59bf56bcbba48fad5ba442f265f01f65fa39681",
-  "constant_deduplication_max_abs_error": 0.0
+  "original_vs_dialogue_plus_effects_sdr_db": 2.700332025681052,
+  "processed_vs_dialogue_plus_effects_sdr_db": 12.321803045686417,
+  "estimated_music_sdr_db": 9.62147102413281,
+  "native_cpu_inference_seconds": 20.196241166908294,
+  "chunk_sessions": 4,
+  "limitations": "Residual music and some dialogue/effect loss remain. These values do not imply perfect separation."
 }
