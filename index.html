@@ -8,8 +8,8 @@
   <title>BGM OFF — 배경음악 분리</title>
   <script src="./isolation.js"></script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23d7f36a'/%3E%3Cpath d='M15 27v10m9-19v28m9-23v18m9-28v38m9-24v10' stroke='%23272b23' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="/bgm-separator/assets/index-yHj4r7db.js"></script>
-  <link rel="stylesheet" crossorigin href="/bgm-separator/assets/index-BFcJoPAQ.css">
+  <script type="module" crossorigin src="/bgm-separator/assets/index-CdL--AY6.js"></script>
+  <link rel="stylesheet" crossorigin href="/bgm-separator/assets/index-_82pjow1.css">
 </head>
 <body>
   <a class="skip-link" href="#workspace">작업 화면으로 바로가기</a>
@@ -56,9 +56,23 @@
                 <div class="range-choice"><label><input id="range-full" type="radio" name="clip-range" value="full" checked />전체 영상</label><label><input id="range-selected" type="radio" name="clip-range" value="selected" />구간 선택</label></div>
                 <p id="range-note" class="range-note">영상 길이를 확인하고 있어요.</p>
                 <div id="range-editor" class="range-editor" hidden>
-                  <div class="range-endpoint"><label for="range-start">시작</label><div class="range-time-row"><input id="range-start" type="text" inputmode="text" autocomplete="off" spellcheck="false" value="0:00" aria-describedby="range-format range-summary" /><button id="range-start-current" type="button" class="range-current">현재 위치로</button></div><input id="range-start-slider" type="range" min="0" max="1" step="0.01" value="0" aria-label="시작 위치 조절" /></div>
-                  <div class="range-endpoint"><label for="range-end">끝</label><div class="range-time-row"><input id="range-end" type="text" inputmode="text" autocomplete="off" spellcheck="false" value="0:00" aria-describedby="range-format range-summary" /><button id="range-end-current" type="button" class="range-current">현재 위치로</button></div><input id="range-end-slider" type="range" min="0" max="1" step="0.01" value="0" aria-label="끝 위치 조절" /></div>
-                  <p id="range-format" class="range-format">분:초 또는 초로 입력하세요. 예: 1:05.5 또는 65.5</p>
+                  <div id="trim-editor" class="trim-editor">
+                    <div class="trim-readout"><span id="trim-start-time">0:00</span><span class="trim-position">현재 <output id="trim-current">0:00</output></span><span id="trim-end-time">0:00</span></div>
+                    <div id="trim-timeline" class="trim-timeline" aria-label="영상 트림" aria-describedby="trim-hint">
+                      <div class="trim-track" aria-hidden="true"></div>
+                      <div id="trim-selection" class="trim-selection" aria-hidden="true"></div>
+                      <button id="trim-start" class="trim-handle trim-handle-start" type="button" role="slider" aria-label="구간 시작" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" aria-orientation="horizontal"></button>
+                      <button id="trim-end" class="trim-handle trim-handle-end" type="button" role="slider" aria-label="구간 끝" aria-valuemin="0" aria-valuemax="1" aria-valuenow="1" aria-orientation="horizontal"></button>
+                      <button id="trim-playhead" class="trim-playhead" type="button" role="slider" aria-label="영상 재생 위치" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" aria-orientation="horizontal"></button>
+                    </div>
+                    <div class="trim-scale" aria-hidden="true"><span>0:00</span><span id="trim-total">0:00</span></div>
+                    <p id="trim-hint" class="range-format">양끝 손잡이로 자르고, 선택 영역을 끌어 옮기세요. 막대를 누르면 해당 장면을 볼 수 있어요.</p>
+                  </div>
+                  <div id="range-manual" class="range-manual" hidden>
+                    <div class="range-endpoint"><label for="range-start">시작</label><div class="range-time-row"><input id="range-start" type="text" inputmode="text" value="0:00" autocomplete="off" spellcheck="false" aria-describedby="range-format range-summary" /></div></div>
+                    <div class="range-endpoint"><label for="range-end">끝</label><div class="range-time-row"><input id="range-end" type="text" inputmode="text" value="0:00" autocomplete="off" spellcheck="false" aria-describedby="range-format range-summary" /></div></div>
+                    <p id="range-format" class="range-format">미리보기를 지원하지 않는 영상은 시간을 입력해 주세요. 예: 1:05.5 또는 65.5</p>
+                  </div>
                 </div>
                 <p id="range-summary" class="range-summary" aria-live="polite"></p>
                 <p id="range-adjustment-note" class="range-note" hidden>원본 화질을 유지하기 위해 시작·끝 시간이 조금 조정될 수 있어요. 저장된 구간은 결과에서 확인할 수 있습니다.</p>
