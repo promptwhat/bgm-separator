@@ -1,0 +1,38 @@
+UVR-MDX-NET-Voc_FT model attribution and provenance
+
+Model: UVR-MDX-NET-Voc_FT.onnx (unchanged weights, served as uvr-vocals.onnx)
+Model developers: Ultimate Vocal Remover (UVR), Anjok07 and Aufr33.
+Original MDX-Net architecture: Kuielab and Woosung Choi.
+Source: https://github.com/TRvlvr/model_repo/releases/download/all_public_uvr_models/UVR-MDX-NET-Voc_FT.onnx
+SHA-256: 534b2070fcc7df514b13ef660dc8cbb328679c2374d04354a5c42bb14ecce111
+Size: 66762490 bytes
+
+The current official UVR README asks third-party application developers using
+UVR's models to honor the MIT license and credit UVR and its developers. That
+model-use statement is the basis for distributing this UVR-branded model here.
+Statement: https://github.com/Anjok07/ultimatevocalremovergui#license
+README source pinned to: 5517e0cf0d1acd16a1618eeedec596957523f9e1
+
+The README's LICENSE link is absent from the current repository tree. The
+accompanying LICENSE-UVR-MIT.txt preserves the complete original MIT text and
+copyright notice from the official repository commit
+0fd6b751dbbe9da9c96660d0b4ec2b07108727b7. It is identified as the text source,
+not represented as a file in the current tree.
+https://github.com/Anjok07/ultimatevocalremovergui/blob/0fd6b751dbbe9da9c96660d0b4ec2b07108727b7/LICENSE
+
+The original MDX-Net project is MIT licensed; its original notice is retained
+separately in LICENSE-MDX-NET-MIT.txt.
+https://github.com/kuielab/mdx-net-submission
+
+Official inference sources:
+https://github.com/Anjok07/ultimatevocalremovergui/blob/5517e0cf0d1acd16a1618eeedec596957523f9e1/separate.py
+https://github.com/Anjok07/ultimatevocalremovergui/blob/5517e0cf0d1acd16a1618eeedec596957523f9e1/lib_v5/tfc_tdf_v3.py
+https://github.com/TRvlvr/application_data/blob/3826b05b570dbd4fbedbc807758803b35348ba1b/mdx_model_data/model_data.json
+The metadata is selected using UVR's MD5 of the final 10000*1024 bytes:
+77d07b2667ddf05b9e3175941b4454a0 (not the complete-file MD5).
+
+This browser application applies those published STFT and model parameters in
+JavaScript and ONNX Runtime Web. It does not retrain or alter model weights.
+The model estimates singing vocals; instrumental audio is mixture minus vocals.
+Separation artifacts and retained instrument sounds remain possible. It does
+not distinguish a lead singer from backing singers.
