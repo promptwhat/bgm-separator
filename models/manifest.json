@@ -1,0 +1,76 @@
+{
+  "model": "TIGER-DnR music network",
+  "file": "tiger-music.onnx",
+  "code_revision": "9f18d4a10a7137e1ce8052cfb62215179f1287b6",
+  "weights_revision": "b7a59560bbca10febbcd46fb01600f868e587f57",
+  "code_license": "MIT",
+  "weights_license": "Apache-2.0",
+  "sample_rate": 44100,
+  "chunk_samples": 176400,
+  "chunk_seconds": 4,
+  "fft_size": 2048,
+  "hop_length": 512,
+  "center": true,
+  "pad_mode": "reflect",
+  "window": "periodic Hann",
+  "normalized": false,
+  "input_names": [
+    "spec_real",
+    "spec_imag"
+  ],
+  "output_names": [
+    "music_real",
+    "music_imag"
+  ],
+  "input_shape": [
+    1,
+    1025,
+    345
+  ],
+  "output_shape": [
+    1,
+    1025,
+    345
+  ],
+  "dtype": "float32",
+  "opset": 17,
+  "source_index": 0,
+  "size_bytes": 10942539,
+  "sha256": "c90be124e0fee42380f3b3f184d3fdbf248509dd8ca411229d5c1f2a20c3fae4",
+  "parameter_count": 1407282,
+  "original_adapter_max_waveform_error": 4.280991561245173e-09,
+  "export_seconds": 20.234327374957502,
+  "parity_checks": [
+    {
+      "fixture": "broadband",
+      "max_spectral_absolute_error": 2.1532177925109863e-06,
+      "max_waveform_absolute_error": 1.0481016943231225e-08,
+      "cpu_seconds": 5.163788917008787
+    },
+    {
+      "fixture": "quiet",
+      "max_spectral_absolute_error": 2.470187610015273e-09,
+      "max_waveform_absolute_error": 1.2235545909788925e-11,
+      "cpu_seconds": 6.815876874839887
+    },
+    {
+      "fixture": "silence",
+      "max_spectral_absolute_error": 0.0,
+      "max_waveform_absolute_error": 0.0,
+      "cpu_seconds": 5.42040495807305
+    }
+  ],
+  "tested_runtime": {
+    "torch": "2.14.0",
+    "torch_device": "mps",
+    "onnxruntime": "1.30.0"
+  },
+  "limitations": [
+    "AI estimates can contain leakage or remove parts of dialogue/effects.",
+    "Four-second browser chunks use shorter context than upstream twelve-second inference.",
+    "CPU parity verified; browser WebGPU must be checked independently."
+  ],
+  "graph_optimization": "Byte-identical Constant tensors shared; no arithmetic or weight changes.",
+  "constant_deduplication_max_abs_error": 0.0,
+  "node_count": 12612
+}

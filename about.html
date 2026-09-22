@@ -1,0 +1,15 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>이용 안내 · 배경음악 분리</title><style>body{max-width:760px;margin:64px auto;padding:0 24px;font:16px/1.8 system-ui;color:#252820;background:#f7f8f3}h1{font-size:32px}h2{font-size:21px;margin-top:40px}a{color:#354b22}li{margin-bottom:10px}small{color:#62665a}</style>
+<a href="./">← 배경음악 분리로 돌아가기</a><h1>소리는 분리하고, 영상은 그대로.</h1>
+<p>이 도구는 영상 속 음악을 추정해 원본 소리에서 빼는 무료 브라우저 도구입니다. 씨댄스 등으로 만든 영상과 일반 동영상에 사용할 수 있습니다. 특정 영상 생성 서비스의 공식 도구는 아닙니다.</p>
+<h2>어떻게 사용하나요?</h2><p>최신 데스크톱 Chrome 또는 Edge에서 사이트를 열고 영상을 끌어놓은 다음 ‘배경음악 분리하기’를 누르세요. 첫 사용에는 처리 엔진과 모델을 내려받습니다. 처리 시간은 영상 길이와 컴퓨터 성능에 따라 달라지며, 처리 중에는 탭을 열어 두세요.</p>
+<p>지원 범위는 300MiB 이하·3분 이내의 모노/스테레오 영상입니다. MP4·MOV·MKV·WebM을 읽으며, 코덱에 따라 원본을 유지한 저장이 불가능할 수 있습니다. 이런 경우 재압축하는 대신 오류를 안내합니다. 휴대폰은 메모리와 브라우저 제약으로 실패할 수 있어 데스크톱 사용을 권합니다.</p>
+<h2>무엇이 그대로 유지되나요?</h2><p>영상 트랙은 디코딩·재인코딩 없이 복사합니다. 결과 제공 전 영상 데이터의 SHA-256, 해상도, 압축 패킷 수와 시간 간격을 원본과 대조합니다. 가변 프레임률도 일정한 프레임률로 바꾸지 않습니다. 최종 파일 전체의 용량이나 해시는 소리와 컨테이너가 바뀌므로 원본과 달라집니다.</p>
+<p>MP4·MOV의 결과 소리는 AAC 320kbps, WebM은 Opus 320kbps, MKV는 FLAC으로 저장합니다. 대사·효과음과 음악은 별도 44.1kHz 32비트 float WAV로도 내려받을 수 있습니다. 다중 영상·오디오 트랙은 첫 번째 트랙을 처리하며 별도 자막·첨부 트랙은 결과에 포함하지 않습니다. 화면 안에 이미 들어 있는 자막은 유지됩니다.</p>
+<h2>오디오 분리의 한계</h2><p>AI가 추정하는 분리이므로 음악과 대사·효과음을 완벽히 나눈다고 보장할 수는 없습니다. 음악이 남거나, 음악과 비슷한 효과음·잔향·노래·대사의 일부가 함께 분리될 수 있습니다. 짧은 구간을 겹쳐 분석하고 각 채널을 따로 처리합니다. 중요한 결과는 원본과 비교해서 들어 주세요.</p>
+<h2>파일과 개인정보</h2><p>선택한 영상·오디오는 외부 서버로 업로드하지 않습니다. 소리 분석과 영상 합치기는 이 브라우저 안에서 수행됩니다. 처리 모델과 사이트 파일을 내려받는 네트워크 요청만 발생합니다. 광고·계정·분석 추적 코드를 넣지 않았습니다. 사이트 호스팅 제공자는 일반적인 접속 기록을 처리할 수 있습니다.</p>
+<h2>모델과 오픈소스</h2><ul>
+<li><a href="https://github.com/JusperLee/TIGER">TIGER</a> · Kai Li 및 연구진의 영화 소리 분리 모델. <a href="https://huggingface.co/JusperLee/TIGER-DnR">공식 TIGER-DnR 가중치</a> 중 음악 네트워크를 사용합니다. 모델 코드는 <a href="models/LICENSE-TIGER-MIT.txt">MIT</a>, 가중치는 <a href="models/LICENSE-APACHE-2.0.txt">Apache 2.0</a>. <a href="models/NOTICE.txt">변환 안내</a>.</li>
+<li><a href="https://onnxruntime.ai/">ONNX Runtime Web</a> · 브라우저 모델 실행. <a href="licenses/ONNXRUNTIME-MIT.txt">MIT 라이선스</a>.</li>
+<li><a href="https://ffmpegwasm.netlify.app/">ffmpeg.wasm</a> · 영상 트랙 복사와 오디오 처리. JavaScript 래퍼는 <a href="licenses/FFMPEG-WASM-MIT.txt">MIT</a>, 변경 없이 사용하는 @ffmpeg/core 0.12.10은 <a href="licenses/FFMPEG-GPL-2.0.txt">GPL 2.0 이상</a>. <a href="https://github.com/ffmpegwasm/ffmpeg.wasm/tree/main/packages/core">원본·빌드 코드</a>, <a href="https://github.com/ffmpegwasm/ffmpeg.wasm/tree/main/build">의존 라이브러리와 빌드 스크립트</a>.</li>
+<li><a href="https://github.com/indutny/fft.js">fft.js</a> · 신호의 주파수 분석과 복원. <a href="licenses/FFT-JS-MIT.txt">MIT 라이선스</a>.</li></ul>
+<small>제작: Prompt_what</small></html>

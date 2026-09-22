@@ -1,0 +1,6 @@
+TIGER-DnR
+Mohan Xu, Kai Li, Guo Chen, Xiaolin Hu
+ICLR 2025: https://arxiv.org/abs/2410.01469
+Code (MIT): https://github.com/JusperLee/TIGER
+Weights (Apache-2.0): https://huggingface.co/JusperLee/TIGER-DnR
+This distribution extracts the music network from official weights and converts it to float32 ONNX with external STFT/iSTFT for browser inference. No retraining or weight quantization.

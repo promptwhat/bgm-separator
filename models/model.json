@@ -1,0 +1,34 @@
+{
+  "name": "TIGER-DnR music",
+  "version": "1.0.0",
+  "url": "/models/tiger-music.onnx",
+  "sampleRate": 44100,
+  "chunkSamples": 176400,
+  "nFft": 2048,
+  "hopLength": 512,
+  "inputNames": [
+    "spec_real",
+    "spec_imag"
+  ],
+  "outputNames": [
+    "music_real",
+    "music_imag"
+  ],
+  "inputShape": [
+    1,
+    1025,
+    345
+  ],
+  "outputShape": [
+    1,
+    1025,
+    345
+  ],
+  "center": true,
+  "padMode": "reflect",
+  "window": "periodic-hann",
+  "sha256": "c90be124e0fee42380f3b3f184d3fdbf248509dd8ca411229d5c1f2a20c3fae4",
+  "sizeBytes": 10942539,
+  "license": "Apache-2.0 weights; MIT architecture",
+  "sourceIndex": 0
+}
