@@ -8,7 +8,7 @@
   <title>BGM OFF — 배경음악 분리</title>
   <script src="./isolation.js"></script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23d7f36a'/%3E%3Cpath d='M15 27v10m9-19v28m9-23v18m9-28v38m9-24v10' stroke='%23272b23' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
-  <script type="module" crossorigin src="/bgm-separator/assets/index-By3bwR-N.js"></script>
+  <script type="module" crossorigin src="/bgm-separator/assets/index-DFIxztDY.js"></script>
   <link rel="stylesheet" crossorigin href="/bgm-separator/assets/index-BYmCL6HK.css">
 </head>
 <body>
@@ -89,11 +89,12 @@
           <aside class="action-column" aria-label="작업 및 다운로드">
             <fieldset id="mode-controls" class="mode-controls" aria-describedby="mode-description">
               <legend>남길 소리 선택</legend>
-              <label class="mode-option"><input type="radio" name="separation-mode" value="dialogue" checked /><span><strong>대사 · 효과음</strong><small>일반 영상의 배경음악 분리</small></span></label>
+              <label class="mode-option"><input type="radio" name="separation-mode" value="dialogue" /><span><strong>배경음 약하게</strong><small>효과음 최우선 · 배경음이 조금 남을 수 있음</small></span></label>
+              <label class="mode-option"><input type="radio" name="separation-mode" value="medium" checked /><span><strong>배경음 중간</strong><small>추천 · 배경음은 더 지우고 효과음은 대부분 남김</small></span></label>
               <label class="mode-option"><input type="radio" name="separation-mode" value="strong" /><span><strong>배경음 세게</strong><small>안 지워질 때 · 효과음 일부도 지워질 수 있음</small></span></label>
               <label class="mode-option"><input type="radio" name="separation-mode" value="vocals" /><span><strong>뮤비 보컬</strong><small>노랫소리와 반주 분리</small></span></label>
             </fieldset>
-            <p id="mode-description" class="mode-description">배경음악을 덜어내고 대사와 효과음을 남깁니다.</p>
+            <p id="mode-description" class="mode-description">약하게와 세게의 중간입니다. 배경음을 더 지우되 효과음은 최대한 남깁니다.</p>
             <div id="setup-panel">
               <span class="panel-kicker">소리의 역할을 나눕니다</span><h2>필요한 소리만,<br /> 다음 편집으로.</h2>
               <ul class="track-list"><li><span class="track-symbol keep-symbol" aria-hidden="true">✓</span><span id="track-keep">대사 · 효과음</span><span class="track-action">남기기</span></li><li><span class="track-symbol music-symbol" aria-hidden="true">↗</span><span id="track-remove">배경음악</span><span class="track-action">따로 받기</span></li></ul>
