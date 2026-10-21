@@ -39,7 +39,7 @@
    if(button&&!button.disabled)event('separation_start',{mode:document.querySelector('input[name="separation-mode"]:checked')?.value||'unknown'});
    const a=e.target.closest?.('a');
    if(a&&['download-video','download-clean','download-music'].includes(a.id)&&a.hasAttribute('href'))event('result_download',{result_type:a.id.replace('download-','')});
-  });
+  },{capture:true});
   const panel=document.getElementById('result-panel');
   if(panel)new MutationObserver(ms=>{if(ms.some(m=>m.attributeName==='hidden')&&!panel.hidden)event('separation_complete',{mode:document.querySelector('input[name="separation-mode"]:checked')?.value||'unknown'});}).observe(panel,{attributes:true,attributeFilter:['hidden']});
  };
